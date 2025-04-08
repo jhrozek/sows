@@ -1,0 +1,26 @@
+The MCPConfig loading currently accepts a home-grown format.
+
+We want to be able to consume a more common format, here is its example:
+```
+{
+  "mcpServers": {
+    "brave-search": {
+      "url": "http://localhost:46988/sse#brave-search"
+    },
+    "fetch": {
+      "alwaysAllow": [
+        "fetch"
+      ],
+      "url": "http://localhost:13630/sse#fetch"
+    },
+    "sequentialthinking": {
+      "url": "http://localhost:29313/sse#sequentialthinking"
+    }
+  }
+}
+```
+
+You can consult the existing StdioServerConfig and SSEServerConfig to see which attributes are required. It is not required to keep the type, we should
+be able to infer it from the item. As a separate task, we migth want to move env into stdio server config only.
+
+Adjust existing test cases, don't create new ones.
