@@ -1,0 +1,1 @@
+I want a simple python hello world application. No tests, no UI, just an app that prints hello world and exits.
